@@ -41,7 +41,7 @@ jobs:
       run: |
         TAG=${{ steps.pkg.outputs.version }}
         echo "New image tag: $TAG"
-        git clone https://github.com/nick-cognizant/nick-demo-manifest.git
+        git clone https://${{ secrets.GIT_TOKEN }}@github.com/nick-cognizant/nick-demo-manifest.git
         cd nick-demo-manifest/mychart
         sed -i -e "s|tag: \".*\"|tag: \"$TAG\"|" values.yaml
         cat values.yaml
