@@ -39,10 +39,11 @@ jobs:
     - name: Update deployment image tag
       if: ${{ success() }}
       run: |
-        TAG=${{ steps.docker_build.outputs.digest }}
+        TAG=${{ steps.pkg.outputs.version }}
         echo "New image tag: $TAG"
         git clone https://github.com/nick-cognizant/nick-demo-manifest.git
         cd nick-demo-manifest
+        ls
         sed -i "s|image: 241428425432.dkr.ecr.us-west-2.amazonaws.com/nick-demo:.*|image: 241428425432.dkr.ecr.us-west-2.amazonaws.com/nick-demo:$TAG|" values.yaml
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
