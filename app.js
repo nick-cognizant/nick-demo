@@ -13,7 +13,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   const font = process.env.FONT || 'Arial, sans-serif';
-  const backgroundColor = process.env.BACKGROUND_COLOR || '#f0f0f0';
+  const backgroundColor = process.env.BACKGROUND_COLOR || '#0000FF';
 
   res.send(`
     <!DOCTYPE html>
