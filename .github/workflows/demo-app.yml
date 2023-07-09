@@ -43,10 +43,10 @@ jobs:
         echo "New image tag: $TAG"
         git clone https://github.com/nick-cognizant/nick-demo-manifest.git
         cd nick-demo-manifest
-        sed -i "s|image: your-docker-username/your-repository:.*|image: your-docker-username/your-repository:$TAG|" values.yaml
+        sed -i "s|image: 241428425432.dkr.ecr.us-west-2.amazonaws.com/nick-demo:.*|image: 241428425432.dkr.ecr.us-west-2.amazonaws.com/nick-demo:$TAG|" values.yaml
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -am "Update image tag"
+        git commit -am "Update image tag $TAG"
         git push
       env:
         GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
