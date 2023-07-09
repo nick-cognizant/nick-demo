@@ -43,7 +43,7 @@ jobs:
         echo "New image tag: $TAG"
         git clone https://github.com/nick-cognizant/nick-demo-manifest.git
         cd nick-demo-manifest/mychart
-        sed -i '' "s|tag: \".*\"|tag: \"$TAG\"|" values.yaml
+        sed -i -e "s|tag: \".*\"|tag: \"$TAG\"|" values.yaml
         cat values.yaml
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
