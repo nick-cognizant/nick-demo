@@ -1,19 +1,9 @@
-// const express = require('express');
-// const app = express();
-// const port = 8080;
-
-// app.get('/', (req, res) => res.send('Hello, World!'));
-
-// app.listen(port, () => {
-//   console.log(`App running at http://localhost:${port}`);
-// });
-
 const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
   const font = process.env.FONT || 'Arial, sans-serif';
-  const backgroundColor = process.env.BACKGROUND_COLOR || '#f0f0f0';
+  const backgroundColor = process.env.BACKGROUND_COLOR || '#ADD8E6'; //#ADD8E6 (blue) #f0f0f0 (white)
 
   res.send(`
     <!DOCTYPE html>
